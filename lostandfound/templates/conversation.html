@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Conversation - {{ item.title }} - Lost & Found</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/conversation.css') }}" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      {% include 'sidebar.html' %}
+      <main class="dashboard-main">
+        <h1>Conversation</h1>
+
+        <!-- Item Information -->
+        <div class="item-header">
+          {% if item.image %}
+          <img
+            src="{{ url_for('static', filename='uploads/' ~ item.image) }}"
+            alt="{{ item.title }}"
+            style="max-width: 220px; max-height: 160px; object-fit: cover; border-radius: 10px; margin-bottom: 8px; display: block; margin-left: auto; margin-right: auto;"
+          />
+          {% endif %}
+          <div class="item-details">
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.description }}</p>
+            <small
+              >Status: {{ item.status }} | Location: {{ item.location }} |
+              Block: {{ item.block }}</small
+            >
+            {% if other_user %}
+            <p>
+              <strong>Contacting:</strong> <span class="contact-username">{{ other_user.username }}</span> ({{ other_user.email }})
+            </p>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Messages -->
+        <div class="messages-container">
+          {% if messages %}
+          <div class="messages-list">
+            {% for message in messages %}
+            <div
+              class="message {% if message.sender_id == session.user_id|string %}sent{% else %}received{% endif %}"
+            >
+              <div class="message-content">
+                <div class="message-user" style="font-weight:600; color:#1976d2; font-size:1rem; margin-bottom:2px;">
+                  {% set sender_id = message.sender_id|string %}
+                  {% if users[sender_id] %}
+                    {{ users[sender_id].username }} <span style="color:#666; font-size:0.95rem;">({{ users[sender_id].email }})</span>
+                  {% else %}
+                    Unknown User
+                  {% endif %}
+                </div>
+                <p>{{ message.message }}</p>
+                <small>{{ message.timestamp.strftime('%Y-%m-%d %H:%M') }}</small>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          {% else %}
+          <div class="no-messages">
+            <p>No messages yet. Start the conversation!</p>
+          </div>
+          {% endif %}
+        </div>
+
+        <!-- Send Message Form -->
+        <div class="send-message">
+          <h3>Send Message</h3>
+          <form
+            method="POST"
+            action="{{ url_for('send_message', item_id=item._id) }}"
+          >
+            <textarea
+              name="message"
+              placeholder="Type your message here..."
+              required
+              rows="7"
+              style="font-size:1.15rem; min-height:120px; width:100%; box-sizing:border-box;"
+            ></textarea>
+            <button type="submit" class="btn-primary">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Back Button -->
+        <div class="back-button">
+          <a href="{{ url_for('inbox') }}" class="btn-secondary"
+            >← Back to Inbox</a
+          >
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

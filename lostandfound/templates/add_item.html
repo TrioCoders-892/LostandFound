@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Add Item - Lost & Found</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add_item.css') }}" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      {% include 'sidebar.html' %}
+      <main class="dashboard-main">
+        <div class="form-container">
+      <h2>Add Lost/Found Item</h2>
+      <form method="POST" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="Title" required />
+        <textarea
+          name="description"
+          placeholder="Description"
+          required
+        ></textarea>
+        <select name="status" required>
+          <option value="lost">Lost</option>
+          <option value="found">Found</option>
+        </select>
+        <input type="text" name="location" placeholder="Location" required />
+        <select name="block" required>
+          <option value="" disabled selected>Select Block</option>
+          <option value="OLD CSE">OLD CSE</option>
+          <option value="NEW CSE">NEW CSE</option>
+          <option value="EEE">EEE</option>
+          <option value="MECH">MECH</option>
+          <option value="CIVIL">CIVIL</option>
+          <option value="ACADEMIC">ACADEMIC</option>
+          <option value="GROUND OPEN AIR AUDITORIUM">
+            GROUND OPEN AIR AUDITORIUM
+          </option>
+          <option value="BUDHA STATUE">BUDHA STATUE</option>
+          <option value="CANTEEN">CANTEEN</option>
+          <option value="OTHER">OTHER</option>
+        </select>
+        <input type="file" name="image" accept="image/*" />
+        <button type="submit">Add Item</button>
+      </form>
+        <p><a href="{{ url_for('dashboard') }}">Back to Dashboard</a></p>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

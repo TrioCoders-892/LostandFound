@@ -1,0 +1,18 @@
+<!-- Constant sidebar for all pages except landing -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar.css') }}" />
+<aside class="sidebar">
+  <h2>Lost & Found</h2>
+  <ul>
+  <li><a href="{{ url_for('dashboard') }}"><span class="icon">🏠</span> Dashboard</a></li>
+  <li><a href="{{ url_for('add_item') }}"><span class="icon">➕</span> Add Item</a></li>
+  <li><a href="{{ url_for('inbox') }}"><span class="icon">💬</span> Messages</a></li>
+  <li><a href="{{ url_for('view_lost_items') }}"><span class="icon">❓</span> View Lost Items</a></li>
+  <li><a href="{{ url_for('view_found_items') }}"><span class="icon">✔️</span> View Found Items</a></li>
+  </ul>
+</aside>
+
+<div class="logout-top">
+  <a href="{{ url_for('logout') }}" class="logout-btn"><span class="icon">🚪</span> Logout</a>
+</div>
+  </ul>
+</aside>

@@ -1,0 +1,46 @@
+h1, h2 { text-align: left; color: #222; }
+
+body { background: linear-gradient(135deg, #ffe3e3 0%, #ffd6e0 100%); font-family: 'Segoe UI', 'Roboto', Arial, sans-serif; margin: 0; }
+.dashboard-main { background: linear-gradient(135deg, #ffe3e3 0%, #ffd6e0 100%); margin-left: 264px; padding: 48px 40px; min-height: 100vh; border-radius: 32px; box-shadow: 0 8px 32px rgba(0,0,0,0.10); transition: margin-left 0.2s; }
+.conversations { margin-top: 32px; }
+.search-bar {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 32px;
+	background: #fff;
+	padding: 18px 24px;
+	border-radius: 16px;
+	box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+.search-bar select,
+.search-bar input[type="text"] {
+	font-size: 1rem;
+	padding: 8px 12px;
+	border-radius: 8px;
+	border: 1px solid #ffd6e0;
+	outline: none;
+	background: #fff6fa;
+}
+.search-bar button {
+	background: linear-gradient(90deg, #ff6a88 0%, #ff99ac 100%);
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: 600;
+	padding: 8px 18px;
+	transition: background 0.2s;
+	box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+}
+.search-bar button:hover {
+	background: linear-gradient(90deg, #ff99ac 0%, #ff6a88 100%);
+}
+.conversation-card { background: #fff; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.12); padding: 28px; margin-bottom: 24px; display: flex; align-items: center; }
+.conversation-card img { width: 80px; height: 80px; border-radius: 10px; margin-right: 24px; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+.conversation-info h3 { color: #ff9800; margin-bottom: 8px; }
+.conversation-info p { color: #333; margin-bottom: 6px; }
+.conversation-info small { color: #666; display: block; margin-bottom: 10px; }
+.btn-contact { background: #ff9800; color: #fff; padding: 10px 20px; border-radius: 6px; font-weight: 600; text-decoration: none; display: inline-block; transition: background 0.3s; margin-top: 8px; }
+.btn-contact:hover { background: #e68900; color: #fff; }
+h1, h2 { text-align: left; color: #222; }
