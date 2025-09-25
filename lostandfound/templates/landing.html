@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome to Lost & Found</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="landing-container">
+      <div class="main-card">
+        <div class="main-heading-row">
+          <h1 class="main-attract">Lost & Found Website</h1>
+          <div class="nav-buttons">
+            <a href="{{ url_for('login') }}" class="btn btn-login">Login</a>
+            <a href="{{ url_for('register') }}" class="btn btn-signup">Sign Up</a>
+          </div>
+        </div>
+        <main class="landing-main">
+          <section class="hero-section">
+            <div class="hero-content">
+              <h2>Welcome to Lost & Found</h2>
+              <p>Your trusted platform to report and find lost or found items quickly and easily.</p>
+              <div class="hero-buttons">
+                <a href="{{ url_for('login') }}" class="btn btn-primary">Get Started</a>
+              </div>
+            </div>
+            <div class="hero-image">
+              <div class="hero-placeholder">
+                <div class="hero-icon">🔍</div>
+                <p>Lost & Found Platform</p>
+              </div>
+            </div>
+          </section>
+          <section class="features-section">
+            <h2>How It Works</h2>
+            <div class="features-grid">
+              <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>Search Items</h3>
+                <p>Easily search for lost or found items by title, location, or description.</p>
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📝</div>
+              <h3>Report Items</h3>
+              <p>
+                Quickly report lost or found items with detailed descriptions
+                and images.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">💬</div>
+              <h3>Connect & Communicate</h3>
+              <p>
+                Contact item owners or finders directly through our secure
+                messaging system.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📊</div>
+              <h3>Manage Dashboard</h3>
+              <p>
+                Track your reported items and manage your profile from your
+                personal dashboard.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta-section">
+          <h2>Ready to Get Started?</h2>
+          <p>
+            Join our community and help reunite lost items with their owners.
+          </p>
+          <a href="{{ url_for('register') }}" class="btn btn-signup-large"
+            >Create Account</a
+          >
+        </section>
+      </main>
+
+      <footer class="landing-footer">
+        <p>&copy; Lost & Found Platform. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+h1, h2 { text-align: left; color: #222; }
+
+body { background: linear-gradient(135deg, #e3ffe8 0%, #b7eaff 100%); font-family: 'Segoe UI', 'Roboto', Arial, sans-serif; margin: 0; }
+.dashboard-main { background: linear-gradient(135deg, #e3ffe8 0%, #b7eaff 100%); margin-left: 264px; padding: 48px 40px; min-height: 100vh; border-radius: 32px; box-shadow: 0 8px 32px rgba(0,0,0,0.10); transition: margin-left 0.2s; }
+.items { display: flex; flex-wrap: wrap; gap: 32px; justify-content: center; }
+.search-bar {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 32px;
+	background: #fff;
+	padding: 18px 24px;
+	border-radius: 16px;
+	box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+.search-bar select,
+.search-bar input[type="text"] {
+	font-size: 1rem;
+	padding: 8px 12px;
+	border-radius: 8px;
+	border: 1px solid #b7eaff;
+	outline: none;
+	background: #f7fbff;
+}
+.search-bar button {
+	background: linear-gradient(90deg, #00c6ff 0%, #007bff 100%);
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: 600;
+	padding: 8px 18px;
+	transition: background 0.2s;
+	box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+}
+.search-bar button:hover {
+	background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+}
+.item-card { background: #fff; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.12); padding: 28px; width: 300px; text-align: center; margin-bottom: 24px; }
+.item-card img { max-width: 100%; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+.item-card h3 { color: #007bff; margin-bottom: 10px; }
+.item-card p { color: #333; margin-bottom: 8px; }
+.item-card small { color: #666; display: block; margin-bottom: 12px; }
+.btn-mark-found { background: #28a745; color: #fff; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: background 0.3s; margin-top: 8px; }
+.btn-mark-found:hover { background: #218838; }
+h1, h2 { text-align: left; color: #222; }
+.lost-card {
+  background: #ffeaea;
+  border: 2px solid #ff6b6b;
+}
+.found-card {
+  background: #eaffea;
+  border: 2px solid #4caf50;
+}
+.status-label {
+  font-weight: 600;
+}
+.lost-status {
+  color: #ff6b6b;
+}
+.found-status {
+  color: #4caf50;
+}

@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+  <title>Lost and Found</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      {% include 'sidebar.html' %}
+      <main class="dashboard-main">
+  <h1>Lost & Found Items</h1>
+
+        <div class="search-container">
+          <form method="POST">
+            <select name="status">
+              <option value="all">All Items</option>
+              <option value="lost">Lost Items</option>
+              <option value="found">Found Items</option>
+            </select>
+            <select name="block">
+              <option value="all" selected>All Blocks</option>
+              <option value="OLD CSE">OLD CSE</option>
+              <option value="NEW CSE">NEW CSE</option>
+              <option value="EEE">EEE</option>
+              <option value="MECH">MECH</option>
+              <option value="CIVIL">CIVIL</option>
+              <option value="ACADEMIC">ACADEMIC</option>
+              <option value="GROUND OPEN AIR AUDITORIUM">
+                GROUND OPEN AIR AUDITORIUM
+              </option>
+              <option value="BUDHA STATUE">BUDHA STATUE</option>
+              <option value="CANTEEN">CANTEEN</option>
+              <option value="OTHER">OTHER</option>
+            </select>
+            <input
+              type="text"
+              name="keyword"
+              placeholder="Search by title or location"
+            />
+            <button type="submit">Search</button>
+          </form>
+        </div>
+
+        <div class="items">
+          {% if items %} {% for item in items %}
+          <div class="item-card animate">
+            <div class="item-user" style="font-weight:600; color:#1976d2; margin-bottom:8px; font-size:1.05rem;">
+              <span>@{{ item.username }}</span>
+            </div>
+            {% if item.image %}
+            <img
+              src="{{ url_for('static', filename='uploads/' ~ item.image) }}"
+              alt="{{ item.title }}"
+            />
+            {% endif %}
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+            <small>Status: {{ item.status }} | Location: {{ item.location }} | Block: {{ item.block }}</small>
+            <div class="item-actions">
+              {% if 'user_id' in session and item.user_id != session['user_id'] %}
+              <a
+                href="{{ url_for('conversation', item_id=item._id) }}"
+                class="btn-contact"
+                >Contact Owner</a
+              >
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %} {% else %}
+          <div class="no-items">
+            <h3>No items found</h3>
+            <p>Try adjusting your search criteria.</p>
+            <a href="{{ url_for('index') }}" class="btn btn-secondary"
+              >View All Items</a
+            >
+          </div>
+          {% endif %}
+        </div>
+      </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

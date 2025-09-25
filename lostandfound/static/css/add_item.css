@@ -1,0 +1,46 @@
+body { background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); font-family: 'Segoe UI', 'Roboto', Arial, sans-serif; margin: 0; }
+
+.form-container { background: rgba(255,255,255,0.97); border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.12); max-width: 420px; margin: 48px auto; padding: 36px 32px; }
+h2 {
+	text-align: center;
+	color: #009688;
+	margin-bottom: 18px;
+}
+.form-bar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-bottom: 32px;
+	background: #fff;
+	padding: 18px 24px;
+	border-radius: 16px;
+	box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+.form-bar select,
+.form-bar input[type="text"],
+.form-bar input[type="file"] {
+	font-size: 1rem;
+	padding: 8px 12px;
+	border-radius: 8px;
+	border: 1px solid #d1d5db;
+	outline: none;
+	background: #f8f9fa;
+}
+.form-bar button {
+	background: linear-gradient(90deg, #009688 0%, #00bfae 100%);
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: 600;
+	padding: 8px 18px;
+	transition: background 0.2s;
+	box-shadow: 0 1px 6px rgba(0,150,136,0.08);
+}
+.form-bar button:hover {
+	background: linear-gradient(90deg, #00796b 0%, #009688 100%);
+}
+h2 { text-align: center; color: #009688; margin-bottom: 18px; }
+input, textarea, select, button { width: 100%; margin: 12px 0; padding: 14px; border-radius: 8px; border: 1px solid #d1d5db; font-size: 1rem; background: #f8f9fa; box-sizing: border-box; }
+button { background: #009688; color: #fff; border: none; cursor: pointer; font-weight: 600; border-radius: 8px; padding: 14px 28px; transition: background 0.3s, box-shadow 0.3s; box-shadow: 0 2px 8px rgba(0,150,136,0.08); }
+button:hover { background: #00796b; box-shadow: 0 4px 16px rgba(0,150,136,0.15); }

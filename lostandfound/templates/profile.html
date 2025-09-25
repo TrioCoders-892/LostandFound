@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Profile - Lost & Found</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <aside class="sidebar">
+        <h2>Profile</h2>
+        <ul>
+          <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+          <li><a href="{{ url_for('add_item') }}">Add Item</a></li>
+          <li><a href="{{ url_for('inbox') }}">Messages</a></li>
+          <li><a href="{{ url_for('index') }}">Search Item</a></li>
+          <li>
+            <a href="{{ url_for('view_lost_items') }}">View All Lost Items</a>
+          </li>
+          <li>
+            <a href="{{ url_for('view_found_items') }}">View All Found Items</a>
+          </li>
+          <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+      </aside>
+      <main class="dashboard-main">
+        <h1>User Profile</h1>
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <!-- Additional profile info can be added here -->
+      </main>
+    </div>
+  </body>
+</html>

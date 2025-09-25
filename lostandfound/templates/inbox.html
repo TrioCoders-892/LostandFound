@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Inbox - Lost & Found</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/inbox.css') }}" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      {% include 'sidebar.html' %}
+      <main class="dashboard-main">
+        <h1>Welcome, {{ session['username'] }}</h1>
+        <h2>Your Messages</h2>
+
+        {% if conversations %}
+        <div class="conversations">
+          {% for item_id, conv_data in conversations.items() %}
+          <div class="conversation-card">
+            {% if conv_data.item.image %}
+            <img
+              src="{{ url_for('static', filename='uploads/' ~ conv_data.item.image) }}"
+              alt="{{ conv_data.item.title }}"
+            />
+            {% endif %}
+            <div class="conversation-info">
+              <h3>{{ conv_data.item.title }}</h3>
+              <p>{{ conv_data.item.description }}</p>
+              <small
+                >Status: {{ conv_data.item.status }} | Location: {{
+                conv_data.item.location }}</small
+              >
+              <div class="message-preview">
+                <strong>Last message:</strong> {{
+                conv_data.last_message.message[:50] }}... {% if
+                conv_data.unread_count > 0 %}
+                <span class="unread-badge"
+                  >{{ conv_data.unread_count }} unread</span
+                >
+                {% endif %}
+              </div>
+              <a
+                href="{{ url_for('conversation', item_id=item_id) }}"
+                class="btn-contact"
+                >View Conversation</a
+              >
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% else %}
+        <div class="no-messages">
+          <p>You have no messages yet.</p>
+          <p>Start by browsing items and contacting other users!</p>
+        </div>
+        {% endif %}
+      </main>
+    </div>
+  </body>
+</html>
