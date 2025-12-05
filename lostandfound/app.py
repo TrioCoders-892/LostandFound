@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.secret_key = "secret_key_here"
 
 # MongoDB Atlas configuration
-app.config["MONGO_URI"] = "mongodb+srv://flaskuser:flaskpass123@cluster0.jmab4ig.mongodb.net/lost_found_db?retryWrites=true&w=majority"
+app.config["MONGO_URI"] = "userurlmongodbatlas"
 
 mongo = PyMongo(app)
 
